@@ -1,290 +1,293 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primeiro dia</title>
-    <script src="script.js"></script>
-    <style>
-        body {
-            background-color: black;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0;
-            padding-top: 5px; /* Move tudo mais para cima */
-            text-align: center;
-        }
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Primeiro dia</title>
+        <script src="script.js"></script>
+        <style>
+            body {
+                background-color: black;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0;
+                padding-top: 5px; /* Move tudo mais para cima */
+                text-align: center;
+            }
 
-        .ficha {
-            background-color: black;
-            width: 660px;
-            height: 20px;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start; /* Alinha os elementos mais para cima */
-            gap: 10px;
-            height: auto;
-            min-height: 700px; /* Mantém um mínimo, mas pode crescer */
-            font-family:'Courier New', Courier, monospace;
-            box-shadow: white;
+            .ficha {
+                background-color: black;
+                width: 660px;
+                height: 20px;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start; /* Alinha os elementos mais para cima */
+                gap: 10px;
+                height: auto;
+                min-height: 700px; /* Mantém um mínimo, mas pode crescer */
+                font-family:'Courier New', Courier, monospace;
+                box-shadow: white;
 
-        }
+            }
 
-        .n_a {
-            background-color: rgb(0, 0, 0);
-            color: rgb(141, 0, 0);
-            width: 656px;
-            height: 20px;
+            .n_a {
+                background-color: rgb(0, 0, 0);
+                color: rgb(141, 0, 0);
+                width: 656px;
+                height: 20px;
+                font-size: 24px;
+                border: none;
+                resize: none;   
+                text-align: center;
+                color: rgb(255, 0, 0);
+                text-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 20px rgb(255, 0, 0), 0 0 40px rgb(255, 0, 0);
+                
+            }
+
+            .n_b {
+                background-color: rgb(65, 0, 0);
+                color: rgb(150, 150, 150);
+                width: 656px;
+                height: 29px;
+                font-size: 24px;
+                border: none;
+                resize: none;
+                text-align: center;
+                outline: none;
+                border-top-left-radius: 20px;
+                border-top-right-radius:20px;
+                font-family: 'Courier New', Courier, monospace;
+                color: rgb(211, 211, 211);
+                text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 10px rgb(85, 85, 85), 0 0 20px rgb(255, 255, 255), 0 0 40px rgb(97, 97, 97);
+                border-radius: 10px;
+                box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
+                box-shadow: inset 0 0 10px #000000, inset 0 0 20px #ff0000;
+
+            }
+
+            .linha {
+                width: 659px;
+                position: relative;
+                top: -5px;
+                height: 5px;
+                background-color: red;
+                opacity: 0.1;
+                transition: opacity 0.3s;
+                border-radius: 20px;
+                
+            }
+            .atributos {
+                background-color: rgb(71, 0, 0);
+                width: 654px;
+                height: 325px;
+                border-style:solid;
+                border-color:rgb(61, 0, 0);
+                border-radius:20px;
+                border-top-left-radius:0px;
+                border-top-right-radius:0px;
+                position: relative;
+                top:-15px;
+                color: rgb(255, 0, 0);
+                text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(0, 0, 0), 0 0 20px rgb(0, 0, 0), 0 0 40px rgb(0, 0, 0);
+                border-radius: 10px;
+                box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
+                box-shadow: inset 0 0 10px #000000, inset 0 0 20px #9b0303;
+
+                
+            }
+            .forca {
+                background-color: rgb(116, 0, 0);
+                width: 250px;
+                height: 100px;
+                position: relative;
+                
+                border-radius:20px;
+                border-width: 2px;
+                border-style:solid;
+                border-color: rgb(83, 0, 0);
+                color:black;
+                border-top-left-radius: 0px;
+                border-top-right-radius:0px;
+                
+                
+
+            }
+            .resistencia {
+                background-color:rgb(116, 0, 0);
+                width: 250px;
+                height: 100px;
+                position: relative;
+                top:-103.5px;
+                left:401px;            
+                border-radius:20px;
+                border-width: 2px;
+                border-style:solid;
+                border-color: rgb(83, 0, 0);
+                color:black;
+                border-top-left-radius: 0px;
+                border-top-right-radius:0px;
+
+            }
+            .agilidade {
+                background-color: rgb(116, 0, 0);
+                width: 250px;
+                height: 100px;
+                position: relative;
+                top:-100px;
+                            
+                border-radius:20px;
+                border-width: 2px;
+                border-style:solid;
+                border-color: rgb(83, 0, 0);
+                color:black;
+                border-top-left-radius: 0px;
+                border-top-right-radius:0px;
+
+            }
+            .mana{
+                background-color: rgb(102, 1, 1);
+                width: 250px;
+                height: 100px;
+                position: relative;
+                top:-203.5px;
+                left:401px;            
+                border-radius:20px;
+                border-width: 2px;
+                border-style:solid;
+                border-color: rgb(102, 1, 1);
+                color:black;
+                border-top-left-radius: 0px;
+                border-top-right-radius:0px;
+            }
+            .mentalidade{
+                background-color: rgb(102, 1, 1);
+                width: 250px;
+                height: 100px;
+                position: relative;
+                top:-200px;
+                border-radius:20px;
+                border-width: 2px;
+                border-style:solid;
+                border-color: rgb(83, 0, 0);
+                color:black;
+                border-top-left-radius: 0px;
+                border-top-right-radius:0px;
+            }
+            .vitalidade{
+                background-color: rgb(102, 1, 1);
+                width: 250px;
+                height: 100px;
+                position: relative;
+                top:-303.5px;
+                left:401px;
+                border-radius:20px;
+                border-width: 2px;
+                border-style:solid;
+                border-color: rgb(83, 0, 0);
+                color:black;
+                border-top-left-radius: 0px;
+                border-top-right-radius:0px;
+            }   
+            .cabecalho{
+                background-color: rgb(83, 0, 0);
+                border-radius: 5px;
+                border-top-left-radius: 0px;
+                border-top-right-radius:0px;
+                position: relative;
+                top: 0px;
+                color: rgb(185, 10, 10);
+            }
+            .centro-atributos{
+                background-color:rgb(105, 0, 0);
+                position:relative;
+                width: 140px;
+                height: 315px;
+                bottom: 350px;  
+                border-style: inset;
+                border-color:rgb(138, 3, 3);
+                color: rgb(0, 0, 0);
+                font-family:'Times New Roman', Times, serif;
+                font-style: oblique;
+            }   
+            .serafim{
+                color: rgb(0, 0, 0);
+                text-shadow: 0 0 5px rgb(65, 0, 0), 0 0 10px rgb(207, 0, 0), 0 0 20px rgb(66, 3, 3), 0 0 40px rgb(255, 0, 0);
+            }
+            .serafim2{
+                color:rgb(0, 0, 0);
+                text-shadow: 0 0 5px rgb(65, 0, 0), 0 0 10px rgb(207, 0, 0), 0 0 20px rgb(66, 3, 3), 0 0 40px rgb(255, 0, 0);
+                
+            }
+            .serafim3{
+                color:rgb(0, 0, 0);
+                text-shadow: 0 0 5px rgb(65, 0, 0), 0 0 10px rgb(207, 0, 0), 0 0 20px rgb(66, 3, 3), 0 0 40px rgb(255, 0, 0);
+            }
+            #confirmButton {
+            position: absolute;
+            display: none; /* Inicialmente oculto */
             font-size: 24px;
+            background-color: transparent;
             border: none;
-            resize: none;   
-            text-align: center;
+            cursor: pointer;
             color: rgb(255, 0, 0);
-            text-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0), 0 0 20px rgb(255, 0, 0), 0 0 40px rgb(255, 0, 0);
-            
-        }
+            text-shadow: 0 0 5px rgb(255, 0, 0), 0 0 10px rgb(255, 0, 0);
+            margin-top: 10px;
+            top: -63px;
+            left: 360px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ficha">
+            <h1 class="n_a">Assine seu nome no livro do Caronte.</h1><div>
+            <textarea id="n_b" class="n_b"></textarea>
+            <div class="linha" id="linha"></div>
+            </div>  
+            <div class="atributos">
+                
+                <div class="forca">
+                    <div class="cabecalho">força</div>
+                    <div class="atributo"></div>
+                </div>
+                <div class="resistencia">
+                    <div class="cabecalho">resistência</div>
+                    <div class="atributo"></div>
+                </div>
+                <div class="agilidade">
+                    <div class="cabecalho">agilidade</div>
+                    <div class="atributo"></div>
+                </div>
+                <div class="mana">
+                    <div class="cabecalho">mana</div>
+                    <div class="atributo"></div>
+                </div>
+                <div class="mentalidade">
+                    <div class="cabecalho">mentalidade</div>
+                    <div class="atributo"></div>
+                </div>
+                <div class="vitalidade">
+                    <div class="cabecalho">vitalidade</div>
+                    <div class="atributo"></div>
+                
+                </div></div>
+                <div class="centro-atributos">
+                    <h4 class="serafim">"O inferno não queima os pecadores, apenas os acolhe."</h4>
+                    <h4 class="serafim2">"O inferno não é um lugar, é a ausência de esperança."</h4>
+                    <h4 class="serafim3">"Dancei com os demônios e, no fim, fui eu quem puxou a música."</h4>
+                    <!-- Botão de confirmação -->
+                    <!-- Botão de confirmação -->
+                    <button id="confirmButton">✓</button>
+                </div>
+        </div>
 
-        .n_b {
-            background-color: rgb(65, 0, 0);
-            color: rgb(150, 150, 150);
-            width: 656px;
-            height: 29px;
-            font-size: 24px;
-            border: none;
-            resize: none;
-            text-align: center;
-            outline: none;
-            border-top-left-radius: 20px;
-            border-top-right-radius:20px;
-            font-family: 'Courier New', Courier, monospace;
-            color: rgb(211, 211, 211);
-            text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 10px rgb(85, 85, 85), 0 0 20px rgb(255, 255, 255), 0 0 40px rgb(97, 97, 97);
-            border-radius: 10px;
-            box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
-            box-shadow: inset 0 0 10px #000000, inset 0 0 20px #ff0000;
-
-        }
-
-        .linha {
-            width: 659px;
-            position: relative;
-            top: -5px;
-            height: 5px;
-            background-color: red;
-            opacity: 0.1;
-            transition: opacity 0.3s;
-            border-radius: 20px;
-            
-        }
-        .atributos {
-            background-color: rgb(71, 0, 0);
-            width: 654px;
-            height: 325px;
-            border-style:solid;
-            border-color:rgb(61, 0, 0);
-            border-radius:20px;
-            border-top-left-radius:0px;
-            border-top-right-radius:0px;
-            position: relative;
-            top:-15px;
-            color: rgb(255, 0, 0);
-            text-shadow: 0 0 5px rgb(0, 0, 0), 0 0 10px rgb(0, 0, 0), 0 0 20px rgb(0, 0, 0), 0 0 40px rgb(0, 0, 0);
-            border-radius: 10px;
-            box-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
-            box-shadow: inset 0 0 10px #000000, inset 0 0 20px #9b0303;
-
-            
-        }
-        .forca {
-            background-color: rgb(116, 0, 0);
-            width: 250px;
-            height: 100px;
-            position: relative;
-            
-            border-radius:20px;
-            border-width: 2px;
-            border-style:solid;
-            border-color: rgb(83, 0, 0);
-            color:black;
-            border-top-left-radius: 0px;
-            border-top-right-radius:0px;
-            
-            
-
-        }
-        .resistencia {
-            background-color:rgb(116, 0, 0);
-            width: 250px;
-            height: 100px;
-            position: relative;
-            top:-103.5px;
-            left:401px;            
-            border-radius:20px;
-            border-width: 2px;
-            border-style:solid;
-            border-color: rgb(83, 0, 0);
-            color:black;
-            border-top-left-radius: 0px;
-            border-top-right-radius:0px;
-
-        }
-        .agilidade {
-            background-color: rgb(116, 0, 0);
-            width: 250px;
-            height: 100px;
-            position: relative;
-            top:-100px;
-                        
-            border-radius:20px;
-            border-width: 2px;
-            border-style:solid;
-            border-color: rgb(83, 0, 0);
-            color:black;
-            border-top-left-radius: 0px;
-            border-top-right-radius:0px;
-
-        }
-        .mana{
-            background-color: rgb(102, 1, 1);
-            width: 250px;
-            height: 100px;
-            position: relative;
-            top:-203.5px;
-            left:401px;            
-            border-radius:20px;
-            border-width: 2px;
-            border-style:solid;
-            border-color: rgb(102, 1, 1);
-            color:black;
-            border-top-left-radius: 0px;
-            border-top-right-radius:0px;
-        }
-        .mentalidade{
-            background-color: rgb(102, 1, 1);
-            width: 250px;
-            height: 100px;
-            position: relative;
-            top:-200px;
-            border-radius:20px;
-            border-width: 2px;
-            border-style:solid;
-            border-color: rgb(83, 0, 0);
-            color:black;
-            border-top-left-radius: 0px;
-            border-top-right-radius:0px;
-        }
-        .vitalidade{
-            background-color: rgb(102, 1, 1);
-            width: 250px;
-            height: 100px;
-            position: relative;
-            top:-303.5px;
-            left:401px;
-            border-radius:20px;
-            border-width: 2px;
-            border-style:solid;
-            border-color: rgb(83, 0, 0);
-            color:black;
-            border-top-left-radius: 0px;
-            border-top-right-radius:0px;
-        }   
-        .cabecalho{
-            background-color: rgb(83, 0, 0);
-            border-radius: 5px;
-            border-top-left-radius: 0px;
-            border-top-right-radius:0px;
-            position: relative;
-            top: 0px;
-            color: rgb(185, 10, 10);
-        }
-        .centro-atributos{
-            background-color:rgb(105, 0, 0);
-            position:relative;
-            width: 140px;
-            height: 315px;
-            bottom: 350px;  
-            border-style: inset;
-            border-color:rgb(138, 3, 3);
-            color: rgb(0, 0, 0);
-            font-family:'Times New Roman', Times, serif;
-            font-style: oblique;
-        }   
-        .serafim{
-            color: rgb(0, 0, 0);
-            text-shadow: 0 0 5px rgb(65, 0, 0), 0 0 10px rgb(207, 0, 0), 0 0 20px rgb(66, 3, 3), 0 0 40px rgb(255, 0, 0);
-        }
-        .serafim2{
-            color:rgb(0, 0, 0);
-            text-shadow: 0 0 5px rgb(65, 0, 0), 0 0 10px rgb(207, 0, 0), 0 0 20px rgb(66, 3, 3), 0 0 40px rgb(255, 0, 0);
-            
-        }
-        .serafim3{
-            color:rgb(0, 0, 0);
-            text-shadow: 0 0 5px rgb(65, 0, 0), 0 0 10px rgb(207, 0, 0), 0 0 20px rgb(66, 3, 3), 0 0 40px rgb(255, 0, 0);
-        }
-        #confirmButton {
-        display: none; /* Inicialmente oculto */
-        font-size: 24px;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        color: rgb(0, 255, 0);
-        text-shadow: 0 0 5px rgb(0, 255, 0), 0 0 10px rgb(0, 255, 0);
-        margin-top: 10px;
-        position: 
-        }
-    </style>
-</head>
-<body>
-    <div class="ficha">
-        <h1 class="n_a">Assine seu nome no livro do Caronte.</h1>
-        <div>
-        <textarea id="n_b" class="n_b"></textarea>
-        <div class="linha" id="linha"></div></div>  
-        <div class="atributos">
-            
-            <div class="forca">
-                <div class="cabecalho">força</div>
-                <div class="atributo"></div>
-            </div>
-            <div class="resistencia">
-                <div class="cabecalho">resistência</div>
-                <div class="atributo"></div>
-            </div>
-            <div class="agilidade">
-                <div class="cabecalho">agilidade</div>
-                <div class="atributo"></div>
-            </div>
-            <div class="mana">
-                <div class="cabecalho">mana</div>
-                <div class="atributo"></div>
-            </div>
-            <div class="mentalidade">
-                <div class="cabecalho">mentalidade</div>
-                <div class="atributo"></div>
-            </div>
-            <div class="vitalidade">
-                <div class="cabecalho">vitalidade</div>
-                <div class="atributo"></div>;
-            
-            </div></div>
-            <div class="centro-atributos">
-                <h4 class="serafim">"O inferno não queima os pecadores, apenas os acolhe."</h4>
-                <h4 class="serafim2">"O inferno não é um lugar, é a ausência de esperança."</h4>
-                <h4 class="serafim3">"Dancei com os demônios e, no fim, fui eu quem puxou a música."</h4>
-                <!-- Botão de confirmação -->
-                <!-- Botão de confirmação -->
-                <button id="confirmButton">✅</button>
-            </div>
-    </div>
-
-    <script>
+        <script>
 const input = document.getElementById("n_b");
 const linha = document.getElementById("linha");
 const confirmButton = document.getElementById("confirmButton");
+let morto = false; // Variável para controlar se o personagem está morto
 
 let timeout;
 
@@ -297,7 +300,7 @@ input.addEventListener("input", () => {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
         confirmButton.style.display = "block"; // Mostra o botão ✅ após 2 segundos de inatividade
-    }, 2000); // 2 segundos
+    }, 1500); // 2 segundos
 });
 
 // Ao clicar no botão de confirmação (✅)
@@ -306,10 +309,12 @@ confirmButton.addEventListener("click", () => {
     if (nome) {
         localStorage.setItem("nomeDoUsuario", nome); // Salva o nome no localStorage
         window.location.href = "dia1.0.html"; // Redireciona para a página dia1.0.html
+    } else {
+        input.value = ""; // Garante que a textarea fique vazia se não houver nome
     }
 });
 
-// Geração de atributos (mantida)
+// Geração de atributos
 document.addEventListener("DOMContentLoaded", () => {
     const atributos = {
         forca: gerarAtributo(),
@@ -344,9 +349,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    atualizarAtributos();
-});
+    // Função para verificar se o personagem está morto
+    function verificarMorte() {
+        if (atributos.vitalidade <= 0 && !morto) {
+            morto = true; // Define a variável morto como true
+            alert("Você morreu! Atualizando atributos...");
+            // Atualiza os atributos apenas se o personagem estiver morto
+            atributos.forca = gerarAtributo();
+            atributos.resistencia = gerarAtributo();
+            atributos.agilidade = gerarAtributo();
+            atributos.mana = gerarAtributo();
+            atributos.mentalidade = gerarAtributo();
+            atributos.vitalidade = gerarAtributo();
+            atualizarAtributos();
+        }
+    }
 
-        </script>
-</body>
-</html>
+    // Atualiza os atributos inicialmente
+    atualizarAtributos();
+
+    // Verifica a morte sempre que a vitalidade for alterada
+    // (Você pode chamar verificarMorte() após eventos que reduzam a vitalidade)
+});
+    
+
+            </script>
+    </body>
+    </html>

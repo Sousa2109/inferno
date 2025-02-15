@@ -1,0 +1,31 @@
+body {
+    background-color: black;
+    color: rgb(112, 3, 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    padding-top: 10px; /* Adiciona um pequeno espaço do topo */
+}
+
+.t-a, .t-b {
+    position: static; /* Removendo position: relative */
+    margin-bottom: 20px; /* Espaço entre os elementos */
+}
+
+.b-a {
+    color: rgb(255, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+    background-color: black;
+    border: 2px solid rgb(128, 5, 5);
+    border-radius: 30px;
+    border-inline-end: 40px;
+    border-inline-start: 40px;
+    padding: 10px;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+}

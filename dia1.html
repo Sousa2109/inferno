@@ -225,16 +225,29 @@
             color:rgb(0, 0, 0);
             text-shadow: 0 0 5px rgb(65, 0, 0), 0 0 10px rgb(207, 0, 0), 0 0 20px rgb(66, 3, 3), 0 0 40px rgb(255, 0, 0);
         }
-
+        #confirmButton {
+        display: none; /* Inicialmente oculto */
+        font-size: 24px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: rgb(0, 255, 0);
+        text-shadow: 0 0 5px rgb(0, 255, 0), 0 0 10px rgb(0, 255, 0);
+        margin-top: 10px;
+        position: 
+        }
     </style>
 </head>
 <body>
     <div class="ficha">
         <h1 class="n_a">Assine seu nome no livro do Caronte.</h1>
         <div>
-        <textarea id="n_b" class="n_b"></textarea>
+        <textarea id="n_b" class="n_b">
+            <div class="linha" id="linha"></div>
+        </textarea>
         <div class="linha" id="linha"></div>
-        </div>
+        </div>  
+        <button id="confirmButton">✅</button>
         <div class="atributos">
             
             <div class="forca">
@@ -266,19 +279,42 @@
                 <h4 class="serafim">"O inferno não queima os pecadores, apenas os acolhe."</h4>
                 <h4 class="serafim2">"O inferno não é um lugar, é a ausência de esperança."</h4>
                 <h4 class="serafim3">"Dancei com os demônios e, no fim, fui eu quem puxou a música."</h4>
+                <!-- Botão de confirmação -->
+                <!-- Botão de confirmação -->
+                <button id="confirmButton">✅</button>
             </div>
     </div>
 
     <script>
-        const input = document.getElementById("n_b");
-        const linha = document.getElementById("linha");
+const input = document.getElementById("n_b");
+const linha = document.getElementById("linha");
+const confirmButton = document.getElementById("confirmButton");
 
-        input.addEventListener("input", () => {
-            let intensidade = input.value.length / 6;
-            linha.style.opacity = Math.min(intensidade, 5);
-            
-        }); 
-        document.addEventListener("DOMContentLoaded", () => {
+let timeout;
+
+// Monitora a digitação no campo de texto
+input.addEventListener("input", () => {
+    let intensidade = input.value.length / 6;
+    linha.style.opacity = Math.min(intensidade, 5);
+
+    // Reinicia o timeout sempre que o usuário digitar algo
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+        confirmButton.style.display = "block"; // Mostra o botão ✅ após 2 segundos de inatividade
+    }, 2000); // 2 segundos
+});
+
+// Ao clicar no botão de confirmação (✅)
+confirmButton.addEventListener("click", () => {
+    const nome = input.value.trim(); // Pega o valor do campo de texto (sem espaços extras)
+    if (nome) {
+        localStorage.setItem("nomeDoUsuario", nome); // Salva o nome no localStorage
+        window.location.href = "dia1.0.html"; // Redireciona para a página dia1.0.html
+    }
+});
+
+// Geração de atributos (mantida)
+document.addEventListener("DOMContentLoaded", () => {
     const atributos = {
         forca: gerarAtributo(),
         resistencia: gerarAtributo(),
@@ -289,7 +325,7 @@
     };
 
     function gerarAtributo() {
-        return Math.floor(Math.random() * 100) + 1; // Valores entre 1 e 100
+        return Math.floor(Math.random() * 100) + 1;
     }
 
     function atualizarAtributos() {
@@ -302,7 +338,7 @@
                 elemento.style.fontWeight = "bold";
                 elemento.style.color = "red";
                 elemento.style.marginTop = "20px";
-                
+
                 if (atributos[atributo] < 20) {
                     elemento.style.textShadow = "0 0 10px black, 0 0 20px black";
                 } else {
@@ -314,6 +350,7 @@
 
     atualizarAtributos();
 });
+
         </script>
 </body>
 </html>

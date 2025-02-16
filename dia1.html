@@ -371,6 +371,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Verifica a morte sempre que a vitalidade for alterada
     // (Você pode chamar verificarMorte() após eventos que reduzam a vitalidade)
 });
+    document.getElementById("n_b").addEventListener("input", function () {
+        this.value = this.value.replace(/\n/g, '');
+    });
+    document.getElementById("n_b").addEventListener("keydown", function (event) {
+    if (event.key === "Enter" && confirmButton.style.display === "block") {
+        event.preventDefault(); // Impede que a quebra de linha seja adicionada
+        confirmButton.click(); // Simula um clique no botão
+    }
+});
+
     
 
             </script>
